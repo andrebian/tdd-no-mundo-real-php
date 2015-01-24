@@ -17,4 +17,11 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(1, $numero);
     }
 
+    public function testeDeveEntenderOSimboloV()
+    {
+        $romano = new ConversorDeNumeroRomano();
+        $numero = $romano->converte("V");
+        $this->assertEquals(5, $numero);
+    }
+
 }
