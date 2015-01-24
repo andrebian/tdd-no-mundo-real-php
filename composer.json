@@ -1,0 +1,26 @@
+{
+    "name": "andrebian/tdd-com-php",
+    "description": "Códigos-fonte apresentados no Livro Test-Driven Development, Teste e Design no Mundo Real com PHP",
+    "authors": [
+        {
+            "name": "Andre Cardoso aka andrebian",
+            "email": "andrecardosodev@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "CDC\\Loja\\": [
+                "src/CDC/Loja",
+                "tests/CDC/Loja"
+            ],
+            "CDC\\Exemplos\\": [
+                "src/CDC/Exemplos",
+                "tests/CDC/Exemplos"
+            ]
+        }
+    }
+
+}
