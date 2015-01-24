@@ -9,7 +9,10 @@ class MaiorPreco
 
     public function encontra(CarrinhoDeCompras $carrinho)
     {
-        return 0;
+        if (count($carrinho->getProdutos()) === 0) {
+            return 0;
+        }
+        return $carrinho->getProdutos()[0]->getValorTotal();
     }
 
 }
