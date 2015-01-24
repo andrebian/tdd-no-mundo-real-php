@@ -1,6 +1,6 @@
 <?php
 
-namespace CDC\Loja\Produto;
+namespace CDC\Loja\Carrinho;
 
 use CDC\Loja\Carrinho\CarrinhoDeCompras;
 

@@ -4,14 +4,14 @@ namespace CDC\Loja\Produto;
 
 class Produto
 {
-            private$nome;
+    private$nome;
     private $valorUnitario;
     private $quantidade;
 
     public function __construct($nome, $valorUnitario, $quantidade)
     {
         $this->nome = $nome;
-        $this->valor = $valorUnitario;
+        $this->valorUnitario = $valorUnitario;
         $this->quantidade = $quantidade;
     }
 
