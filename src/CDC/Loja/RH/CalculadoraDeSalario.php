@@ -9,7 +9,7 @@ class CalculadoraDeSalario
 
     public function calculaSalario(Funcionario $funcionario)
     {
-       return 1500 * 0.9;
+       return $funcionario->getSalario() * 0.9;
     }
 
 }

@@ -24,7 +24,6 @@ class CalculadoraDeSalarioTest extends PHPUnit
 
     public function testCalculoSalarioDesenvolvedoresComSalarioAcimaDoLimite()
     {
-        $this->markTestSkipped('O exemplo do livro não abrange este teste');
         $calculadora = new CalculadoraDeSalario();
         $desenvolvedor = new Funcionario(
                 "Andre", 4000.0, TabelaCargos::DESENVOLVEDOR);
