@@ -12,7 +12,13 @@ class MaiorPreco
         if (count($carrinho->getProdutos()) === 0) {
             return 0;
         }
-        return $carrinho->getProdutos()[0]->getValorTotal();
+        $maiorValor = $carrinho->getProdutos()[0]->getValorTotal();
+        foreach ($carrinho->getProdutos() as $produto) {
+            if ($maiorValor < $produto->getValorTotal()) {
+                $maiorValor = $produto->getValorTotal();
+            }
+        }
+        return $maiorValor;
     }
 
 }
