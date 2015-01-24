@@ -8,19 +8,30 @@ use CDC\Loja\Test\TestCase,
 class CalculadoraTest extends TestCase
 {
 
-    public function testDeveSomarUmMaisUm()
+    public function testDeveSomarDoisNumerosPositivos()
     {
-        $this->assertEquals(2, (new Calculadora())->soma(1, 1));
+        $this->assertEquals(4, (new Calculadora())->soma(2, 2));
     }
 
-    public function testDeveSomarUmMaisDois()
+    public function testDeveSomarPositivoComNegativo()
     {
-        $this->assertEquals(3, (new Calculadora())->soma(1, 2));
+        $this->assertEquals(4, (new Calculadora())->soma(6, -2));
     }
 
-    public function testDeveSomarUmMaisTres()
+    public function testDeveSomarNegativoComPositivo()
     {
-        $this->assertEquals(4, (new Calculadora())->soma(1, 3));
+        $this->assertEquals(-4, (new Calculadora())->soma(-6, 2));
+    }
+
+    public function testDeveSomarDoisNumerosNegativos()
+    {
+        $this->assertEquals(-4, (new Calculadora())->soma(-2, -2));
+    }
+
+    public function testDeveSomarComZero()
+    {
+        $this->assertEquals(4, (new Calculadora())->soma(4, 0));
+        $this->assertEquals(4, (new Calculadora())->soma(0, 4));
     }
 
 }
