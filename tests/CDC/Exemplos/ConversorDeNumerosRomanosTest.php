@@ -45,4 +45,11 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(9, $numero);
     }
 
+    public function testDeveEntenderOSimboloXXIV()
+    {
+        $romano = new ConversorDeNumeroRomano();
+        $numero = $romano->converte("XXIV");
+        $this->assertEquals(24, $numero);
+    }
+
 }
