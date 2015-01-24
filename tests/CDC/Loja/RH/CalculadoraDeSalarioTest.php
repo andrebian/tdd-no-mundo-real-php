@@ -34,12 +34,20 @@ class CalculadoraDeSalarioTest extends PHPUnit
 
     public function testDeveCalcularSalarioParaDBAsComSalarioAbaixoDoLimite()
     {
-        $this->markTestSkipped('O exemplo do livro não abrange este teste');
         $calculadora = new CalculadoraDeSalario();
-        $dba = new Funcionario("Andre", 500.0, TabelaCargos::DBA);
-
+        $dba = new Funcionario("Mauricio", 1500.00, "dba");
         $salario = $calculadora->calculaSalario($dba);
-        $this->assertEquals(500.0 * 0.85, $salario, null, 0.00001);
+
+        $this->assertEquals(1500.00 * 0.85, $salario, null, 0.00001);
+    }
+
+    public function testDeveCalcularSalarioParaDBAsComSalarioAcimaDoLimite()
+    {
+        $calculadora = new CalculadoraDeSalario();
+        $dba = new Funcionario("Mauricio", 4500.00, "dba");
+        $salario = $calculadora->calculaSalario($dba);
+
+        $this->assertEquals(4500.00 * 0.75, $salario, null, 0.00001);
     }
 
 }
