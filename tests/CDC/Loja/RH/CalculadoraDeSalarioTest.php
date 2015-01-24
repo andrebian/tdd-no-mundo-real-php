@@ -33,4 +33,13 @@ class CalculadoraDeSalarioTest extends PHPUnit
         $this->assertEquals(4000.0 * 0.8, $salario, null, 0.00001);
     }
 
+    public function testDeveCalcularSalarioParaDBAsComSalarioAbaixoDoLimite()
+    {
+        $calculadora = new CalculadoraDeSalario();
+        $dba = new Funcionario("Andre", 500.0, TabelaCargos::DBA);
+
+        $salario = $calculadora->calculaSalario($dba);
+        $this->assertEquals(500.0 * 0.85, $salario, null, 0.00001);
+    }
+
 }
