@@ -42,13 +42,25 @@ class CarrinhoDeComprasTest extends TestCase
         $valor = $this->carrinho->maiorValor();
         $this->assertEquals(1500.00, $valor, null, 0.0001);
     }
-    
+
     public function testParaMostrarOUsoDoTestDataBuilder()
     {
         $carrinho = (new CarrinhoDeComprasBuilder())->comItens(300.0, 700.0, 200.0, 500.0)->cria();
-        
+
         $maiorValor = $carrinho->maiorValor();
         $this->assertEquals(700.0, $maiorValor, null, 0.0001);
+    }
+
+    public function testDeveAdicionarItens()
+    {
+        //garante que o carrinho está vazio
+        $this->assertEmpty($this->carrinho->getProdutos());
+
+        $produto = new Produto("Geladeira", 900.0, 1);
+        $this->carrinho->adiciona($produto);
+        $esperado = count($this->carrinho->getProdutos());
+        $this->assertEquals(1, $esperado);
+        $this->assertEquals($produto, $this->carrinho->getProdutos()[0]);
     }
 
 }
