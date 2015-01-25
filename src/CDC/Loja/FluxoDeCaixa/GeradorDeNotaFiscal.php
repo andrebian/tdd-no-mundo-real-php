@@ -2,20 +2,17 @@
 
 namespace CDC\Loja\FluxoDeCaixa;
 
-use CDC\Loja\FluxoDeCaixa\Pedido,
-    CDC\Loja\FluxoDeCaixa\NFDao,
-    CDC\Loja\FluxoDeCaixa\SAP;
+use CDC\Loja\FluxoDeCaixa\Pedido;
 use DateTime;
 
 class GeradorDeNotaFiscal
 {
-    private$dao;
-    private $sap;
 
-    public function __construct(NFDao $dao, SAP $sap)
+    private $acoes;
+
+    public function __construct($acoes)
     {
-        $this->dao = $dao;
-        $this->sap = $sap;
+        $this->acoes = $acoes;
     }
 
     public function gera(Pedido $pedido)
@@ -23,11 +20,11 @@ class GeradorDeNotaFiscal
         $nf = new NotaFiscal(
                 $pedido->getCliente(), $pedido->getValorTotal() * 0.94, new DateTime()
         );
-        if ($this->dao->persiste($nf) && $this->sap->envia($nf)) {
-            return $nf;
+        foreach ($this->acoes as $acao) {
+            $acao->executa($nf);
         }
 
-        return null;
+        return $nf;
     }
 
 }
