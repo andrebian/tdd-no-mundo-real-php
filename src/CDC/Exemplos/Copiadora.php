@@ -2,16 +2,26 @@
 
 namespace CDC\Exemplos;
 
+use CDC\Exemplos\EscritorPelaSerial,
+        CDC\Exemplos\LeitorDeXML;
+
 class Copiadora
 {
 
+    private $leitor;
+    private $escritor;
+    
+    
+    public function __construct(LeitorDeXML $leitor,  EscritorPelaSerial $escritor)
+    {
+        $this->leitor = $leitor;
+        $this->escritor = $escritor;
+    }
+
     public function copiar()
     {
-        $leitorXML = new LeitorDeXML();
-        $escritorSerial = new EscritorPelaSerial();
-
-        while ($leitorXML->temCaracteres()) {
-            $escritorSerial->escreve($leitorXML->leCaracteres());
+        while ($this->leitor->temCaracteres()) {
+            $this->escritor->escreve($this->leitor->leCaracteres());
         }
     }
 
