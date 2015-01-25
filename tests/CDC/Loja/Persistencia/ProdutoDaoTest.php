@@ -3,9 +3,9 @@
 namespace CDC\Loja\Persistencia;
 
 use CDC\Loja\Test\TestCase,
-    CDC\Loja\Persistencia\ConexaoComBancoDeDados,
     CDC\Loja\Persistencia\ProdutoDao,
     CDC\Loja\Produto\Produto;
+use PDO;
 
 class ProdutoDaoTest extends TestCase
 {
@@ -28,7 +28,7 @@ class ProdutoDaoTest extends TestCase
 
     protected function criaTabela()
     {
-        $sqlString = "CREATE TABLE produto ";
+        $sqlString = "CREATE TABLE IF NOT EXISTS produto ";
         $sqlString .= "(id INTEGER PRIMARY KEY, descricao TEXT, ";
         $sqlString .= "valor_unitario TEXT, status TINYINT(1) );";
         $this->conexao->query($sqlString);
@@ -36,9 +36,8 @@ class ProdutoDaoTest extends TestCase
 
     public function testDeveAdicionarUmProduto()
     {
-        $conexao = (new ConexaoComBancoDeDados())->getConexao();
-        $produtoDao = new ProdutoDao($conexao);
-        $produto = new Produto("Geladeira", 150.0);
+        $produtoDao = new ProdutoDao($this->conexao);
+        $produto = new Produto("Geladeira", 150.0, 1);
 
         // Sobrescrevendo a conexão para continuar trabalhando
         // sobre a mesma já instanciada
@@ -48,7 +47,7 @@ class ProdutoDaoTest extends TestCase
         // ver se está igual o produto do cenário
         $salvo = $produtoDao->porId($conexao->lastInsertId());
 
-        $this->assertEquals($salvo["descricao"], $produto->getDescricao());
+        $this->assertEquals($salvo["descricao"], $produto->getNome());
         $this->assertEquals($salvo["valor_unitario"], $produto->getValorUnitario());
         $this->assertEquals($salvo["status"], $produto->getStatus());
     }

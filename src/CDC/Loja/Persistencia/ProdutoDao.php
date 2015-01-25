@@ -1,9 +1,9 @@
 <?php
 
-namespace Loja\Persistencia;
+namespace CDC\Loja\Persistencia;
 
-useusePDO;
-Loja\Produto\Produto;
+use PDO;
+use CDC\Loja\Produto\Produto;
 
 class ProdutoDao
 {
@@ -22,9 +22,9 @@ class ProdutoDao
         $sqlString .= "VALUES (?, ?, ?)";
 
         $stmt = $this->conexao->prepare($sqlString);
-        $stmt->bindParam(1, $produto->getValorUnitario());
-        $stmt->bindParam(2, $produto->getStatus());
-        $stmt->bindParam(3, $produto->getDescricao());
+        $stmt->bindParam(1, $produto->getNome());
+        $stmt->bindParam(2, $produto->getValorUnitario());
+        $stmt->bindParam(3, $produto->getStatus());
 
         $stmt->execute();
         return $this->conexao;
