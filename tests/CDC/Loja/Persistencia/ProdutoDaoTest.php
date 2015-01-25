@@ -10,6 +10,30 @@ use CDC\Loja\Test\TestCase,
 class ProdutoDaoTest extends TestCase
 {
 
+    private $conexao;
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->conexao = new PDO("sqlite:/tmp/test.db");
+        $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->criaTabela();
+    }
+
+    protected function tearDown()
+    {
+        parent::tearDown();
+        unlink("/tmp/test.db");
+    }
+
+    protected function criaTabela()
+    {
+        $sqlString = "CREATE TABLE produto ";
+        $sqlString .= "(id INTEGER PRIMARY KEY, descricao TEXT, ";
+        $sqlString .= "valor_unitario TEXT, status TINYINT(1) );";
+        $this->conexao->query($sqlString);
+    }
+
     public function testDeveAdicionarUmProduto()
     {
         $conexao = (new ConexaoComBancoDeDados())->getConexao();
