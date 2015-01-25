@@ -6,7 +6,7 @@
 Repositório para os exemplos do livro Test Driven Development - Teste e Design no mundo real com PHP.
 ![enter image description here](https://raw.githubusercontent.com/andrebian/tdd-no-mundo-real-php/master/cover.jpeg)
 
-##Como serguir os exemplos apresentados no livro
+##Como seguir os exemplos apresentados no livro
 
 Para cada trecho ou sequência de trechos de código apresentado no livro existe um commit com a seguinte estrutura:
 `Cap X - Pág X[,X e X] [- complemento]`
@@ -19,6 +19,13 @@ Exemplo:
 ```shell 
 $ git checkout 1a503c24a97e79e6880fdb9f49f81ebad0805b46
 $ ./vendor/bin/phpunit --colors tests
+```
+
+Antes de mais nada você deve baixar e instalar o composer, conforme apresentado no livro. Caso não lembre, segue uma cola:
+
+```shell
+$ curl -sS https://getcomposer.org/installer | php
+$ php composer.phar install
 ```
 
 ###Checkouts para acompanhamento
