@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    
+    <!-- Indicando qual é o diretório onde as classes de teste se encontram -->
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory suffix=".php">tests/</directory>
+        </testsuite>
+    </testsuites>
+ 
+<!-- Adicionando filtros, basicamente whitelist (diretórios que serão executados), 
+    dentro temos o exclude (diretórios que não serão executados pelos testes) -->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+            <exclude>
+                <directory suffix=".php">./vendor/</directory>
+                <directory suffix="*Interface.php">src/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="testdox-text" target="tests/_reports/testdox.txt"/>
+        <log type="coverage-html" target="tests/_reports/coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70" />
+        <log type="coverage-text" target="tests/_reports/coverage.txt" charset="UTF-8" />
+    </logging>
+</phpunit>

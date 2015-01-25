@@ -4,8 +4,11 @@ namespace CDC\Exemplos;
 
 class EscritorPelaSerial
 {
+    private $socketContent = '';
+    
     public function escreve($caracter)
     {
-        // deveria escrever em algum socket
+        $this->socketContent .= $caracter;
+        return $this->socketContent;
     }
 }

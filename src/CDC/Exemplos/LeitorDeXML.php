@@ -18,16 +18,21 @@ class LeitorDeXML implements Leitor
     
     public function leCaracteres()
     {
-        return $this->stringDeTesteSomente[$this->contador];
+        if( isset($this->stringDeTesteSomente[$this->contador]) ) {
+            return $this->stringDeTesteSomente[$this->contador];
+        }
+        
+        return null;
     }
 
     public function temCaracteres()
     {
-        if( $this->contador >= strlen($this->stringDeTesteSomente) ) {
+        if( strlen($this->stringDeTesteSomente) > $this->contador  ) {
             $this->contador++;
             return true;
         }
         
+        $this->contador = 0;
         return false;
     }
 
