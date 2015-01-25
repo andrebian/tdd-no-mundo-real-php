@@ -26,7 +26,7 @@ class GeradorDeNotaFiscalTest extends TestCase
         $dao = Mockery::mock("CDC\Loja\FluxoDeCaixa\NFDao");
         $dao->shouldReceive("persiste")->andReturn(true);
         
-        $gerador = new GeradorDeNotaFiscal();
+        $gerador = new GeradorDeNotaFiscal($dao);
         $pedido = new Pedido("Andre", 1000, 1);
         $nf = $gerador->gera($pedido);
 
