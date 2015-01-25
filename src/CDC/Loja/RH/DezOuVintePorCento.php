@@ -2,18 +2,24 @@
 
 namespace CDC\Loja\RH;
 
-use CDC\Loja\RH\RegraDeCalculo,
-    CDC\Loja\RH\Funcionario;
+use CDC\Loja\RH\RegraDeCalculo;
 
-class DezOuVintePorCento implements RegraDeCalculo
+class DezOuVintePorCento extends RegraDeCalculo
 {
 
-    public function calcula(Funcionario $funcionario)
+    protected function porcentagemBase()
     {
-        if ($funcionario->getSalario() > 3000) {
-            return $funcionario->getSalario() * 0.8;
-        }
-        return $funcionario->getSalario() * 0.9;
+        return 0.9;
+    }
+
+    protected function porcentagemAcimaDoLimite()
+    {
+        return 0.8;
+    }
+
+    protected function limite()
+    {
+        return 3000;
     }
 
 }
