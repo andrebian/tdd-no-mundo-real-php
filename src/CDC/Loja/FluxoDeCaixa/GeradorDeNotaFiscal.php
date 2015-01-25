@@ -8,11 +8,22 @@ use DateTime;
 class GeradorDeNotaFiscal
 {
 
+    private $dao;
+
+    public function __construct(NFDao $dao)
+    {
+        $this->dao = $dao;
+    }
+
     public function gera(Pedido $pedido)
     {
-        return new NotaFiscal(
+        $nf = new NotaFiscal(
                 $pedido->getCliente(), $pedido->getValorTotal() * 0.94, new DateTime()
         );
+        if ($this->dao->persiste($nf)) {
+            return $nf;
+        }
+        return null;
     }
 
 }
