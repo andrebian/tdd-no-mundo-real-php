@@ -7,14 +7,13 @@ class Produto
     private$nome;
     private $valorUnitario;
     private $quantidade;
-    private $status;
+    private $status = true;
 
-    public function __construct($nome, $valorUnitario, $quantidade, $status = true)
+    public function __construct($nome, $valorUnitario, $quantidade)
     {
         $this->nome = $nome;
         $this->valorUnitario = $valorUnitario;
         $this->quantidade = $quantidade;
-        $this->status = $status;
     }
 
     function getNome()
@@ -40,6 +39,12 @@ class Produto
     public function getStatus()
     {
         return $this->status;
+    }
+    
+    public function inativa()
+    {
+        $this->status = false;
+
     }
 
 }
