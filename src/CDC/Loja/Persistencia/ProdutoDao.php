@@ -22,9 +22,14 @@ class ProdutoDao
         $sqlString .= "VALUES (?, ?, ?)";
 
         $stmt = $this->conexao->prepare($sqlString);
-        $stmt->bindParam(1, $produto->getNome());
-        $stmt->bindParam(2, $produto->getValorUnitario());
-        $stmt->bindParam(3, $produto->getStatus());
+        $nome = $produto->getNome();
+        $stmt->bindParam(1, $nome);
+        
+        $valorUnitario = $produto->getValorUnitario();
+        $stmt->bindParam(2, $valorUnitario);
+        
+        $status = $produto->getStatus();
+        $stmt->bindParam(3, $status);
 
         $stmt->execute();
         return $this->conexao;
