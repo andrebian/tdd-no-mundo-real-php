@@ -4,7 +4,9 @@
 [![Build Status](https://travis-ci.org/andrebian/tdd-no-mundo-real-php.svg?branch=master)](https://travis-ci.org/andrebian/tdd-no-mundo-real-php) [![Coverage Status](https://coveralls.io/repos/andrebian/tdd-no-mundo-real-php/badge.svg)](https://coveralls.io/r/andrebian/tdd-no-mundo-real-php)
 
 Repositório para os exemplos do livro Test Driven Development - Teste e Design no mundo real com PHP.
-![enter image description here](https://raw.githubusercontent.com/andrebian/tdd-no-mundo-real-php/master/cover.jpeg)
+
+
+![Capa do livro](https://raw.githubusercontent.com/andrebian/tdd-no-mundo-real-php/master/cover.jpeg)
 
 ##Como seguir os exemplos apresentados no livro
 
