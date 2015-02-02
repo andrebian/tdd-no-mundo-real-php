@@ -8,6 +8,11 @@ class Pagamento
     private $valor;
     private $meioPagamento;
 
+    /**
+     * @codeCoverageIgnore
+     * @param type $valor
+     * @param type $meioPagamento
+     */
     public function __construct($valor, $meioPagamento)
     {
         $this->valor = $valor;

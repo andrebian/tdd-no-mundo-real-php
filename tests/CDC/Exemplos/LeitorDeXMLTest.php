@@ -4,6 +4,9 @@ namespace CDC\Exemplos;
 
 use CDC\Loja\Test\TestCase;
 
+/**
+ * @group Exemplos
+ */
 class LeitorDeXMLTest extends TestCase
 {
     
@@ -22,6 +25,10 @@ class LeitorDeXMLTest extends TestCase
         unset($this->class);
     }
     
+    /**
+     * @covers CDC\Exemplos\LeitorDeXML::temCaracteres()
+     * @covers CDC\Exemplos\LeitorDeXML::leCaracteres()
+     */
     public function testTemCaracteres()
     {
         $result = $this->class->leCaracteres();

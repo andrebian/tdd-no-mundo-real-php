@@ -10,6 +10,10 @@ class ProdutoDao
 
     private $conexao;
 
+    /**
+     * @codeCoverageIgnore
+     * @param PDO $conexao
+     */
     public function __construct(PDO $conexao)
     {
         $this->conexao = $conexao;

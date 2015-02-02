@@ -10,6 +10,9 @@ class CarrinhoDeCompras
 
     private $produtos;
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function __construct()
     {
         $this->produtos = new ArrayObject();

@@ -4,6 +4,9 @@ namespace CDC\Loja\FluxoDeCaixa;
 
 use CDC\Loja\Test\TestCase;
 
+/**
+ * @group Loja
+ */
 class PedidoTest extends TestCase
 {
 
@@ -22,6 +25,26 @@ class PedidoTest extends TestCase
         unset($this->class);
     }
     
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\Pedido::getCliente()
+     */
+    public function testGetCliente()
+    {
+        $this->assertNotNull($this->class->getCliente());
+    }
+    
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\Pedido::getValorTotal()()
+     */
+    public function testGetValorTotal()
+    {
+        $this->assertNotNull($this->class->getValorTotal());
+        $this->assertInternalType('float', $this->class->getValorTotal());
+    }
+    
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\Pedido::getQuantidadeItens()
+     */
     public function testGetQuantidadeItens()
     {
         $this->assertInternalType('int', $this->class->getQuantidadeItens());

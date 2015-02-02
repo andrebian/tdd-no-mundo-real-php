@@ -7,6 +7,9 @@ use CDC\Loja\Test\TestCase,
     CDC\Loja\FluxoDeCaixa\Fatura;
 use ArrayObject;
 
+/**
+ * @group Loja
+ */
 class ProcessadorDeBoletosTest extends TestCase
 {
 

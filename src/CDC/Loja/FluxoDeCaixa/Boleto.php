@@ -2,6 +2,9 @@
 
 namespace CDC\Loja\FluxoDeCaixa;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Boleto
 {
 

@@ -7,9 +7,15 @@ use CDC\Loja\Test\TestCase,
     CDC\Loja\Carrinho\MaiorPreco,
     CDC\Loja\Produto\Produto;
 
+/**
+ * @group Loja
+ */
 class MaiorPrecoTest extends TestCase
 {
 
+    /**
+     * @covers CDC\Loja\Carrinho\MaiorPreco::encontra()
+     */
     public function testDeveRetornarZeroSeCarrinhoVazio()
     {
         $carrinho = new CarrinhoDeCompras();
@@ -19,6 +25,9 @@ class MaiorPrecoTest extends TestCase
         $this->assertEquals(0, $valor, null, 0.0001);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\MaiorPreco::encontra()
+     */
     public function testDeveRetornarValorDoItemSeCarrinhoCom1Elemento()
     {
         $carrinho = new CarrinhoDeCompras();
@@ -28,6 +37,9 @@ class MaiorPrecoTest extends TestCase
         $this->assertEquals(900.00, $valor, null, 0.0001);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\MaiorPreco::encontra()
+     */
     public function testDeveRetornarMaiorValorSeCarrinhoComMuitosElementos()
     {
         $carrinho = new CarrinhoDeCompras();

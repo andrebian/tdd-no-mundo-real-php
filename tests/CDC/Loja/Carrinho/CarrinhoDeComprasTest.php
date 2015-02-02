@@ -7,6 +7,9 @@ use CDC\Loja\Test\TestCase,
     CDC\Loja\Produto\Produto,
     CDC\Loja\Test\Builder\CarrinhoDeComprasBuilder;
 
+/**
+ * @group Loja
+ */
 class CarrinhoDeComprasTest extends TestCase
 {
 
@@ -17,7 +20,32 @@ class CarrinhoDeComprasTest extends TestCase
         $this->carrinho = new CarrinhoDeCompras();
         parent::setUp();
     }
+    
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::adiciona()
+     */
+    public function testAdiciona()
+    {
+        $result = $this->carrinho->adiciona(new Produto('Teste', 250.0, 1));
+        $this->assertNotNull($result);
+        $this->assertInstanceOf('CDC\Loja\Carrinho\CarrinhoDeCompras', $result);
+    }
+    
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::getProdutos()
+     */
+    public function testGetProdutos()
+    {
+        $this->carrinho->adiciona(new Produto('Teste', 250.0, 1));
+        $this->carrinho->adiciona(new Produto('Teste 2', 350.0, 1));
+        
+        $this->assertNotEmpty($this->carrinho->getProdutos());
+        $this->assertInstanceOf('ArrayObject', $this->carrinho->getProdutos());
+    }
 
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::maiorValor()
+     */
     public function testDeveRetornarZeroSeCarrinhoVazio()
     {
         $valor = $this->carrinho->maiorValor();
@@ -25,6 +53,9 @@ class CarrinhoDeComprasTest extends TestCase
         $this->assertEquals(0, $valor, null, 0.0001);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::maiorValor()
+     */
     public function testDeveRetornarValorDoItemSeCarrinhoCom1Elemento()
     {
         $this->carrinho->adiciona(new Produto("Geladeira", 900.00, 1));
@@ -33,6 +64,9 @@ class CarrinhoDeComprasTest extends TestCase
         $this->assertEquals(900.00, $valor, null, 0.0001);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::maiorValor()
+     */
     public function testDeveRetornarMaiorValorSeCarrinhoComMuitosElementos()
     {
         $this->carrinho->adiciona(new Produto("Geladeira", 900.00, 1));
@@ -43,6 +77,9 @@ class CarrinhoDeComprasTest extends TestCase
         $this->assertEquals(1500.00, $valor, null, 0.0001);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::maiorValor()
+     */
     public function testParaMostrarOUsoDoTestDataBuilder()
     {
         $carrinho = (new CarrinhoDeComprasBuilder())->comItens(300.0, 700.0, 200.0, 500.0)->cria();
@@ -51,6 +88,10 @@ class CarrinhoDeComprasTest extends TestCase
         $this->assertEquals(700.0, $maiorValor, null, 0.0001);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::getProdutos()
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::adiciona()
+     */
     public function testDeveAdicionarItens()
     {
         //garante que o carrinho está vazio
@@ -63,6 +104,9 @@ class CarrinhoDeComprasTest extends TestCase
         $this->assertEquals($produto, $this->carrinho->getProdutos()[0]);
     }
 
+    /**
+     * @covers CDC\Loja\Carrinho\CarrinhoDeCompras::getProdutos()
+     */
     public function testListaDeProdutos()
     {
         $lista = (new CarrinhoDeCompras())

@@ -9,6 +9,12 @@ class Produto
     private $quantidade;
     private $status = true;
 
+    /**
+     * @codeCoverageIgnore
+     * @param type $nome
+     * @param type $valorUnitario
+     * @param type $quantidade
+     */
     public function __construct($nome, $valorUnitario, $quantidade)
     {
         $this->nome = $nome;

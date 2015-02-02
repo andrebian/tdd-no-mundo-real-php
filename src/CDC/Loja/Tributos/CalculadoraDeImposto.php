@@ -10,6 +10,10 @@ class CalculadoraDeImposto
 
     protected $tabela;
 
+    /**
+     * @codeCoverageIgnore
+     * @param Tabela $tabela
+     */
     public function __construct(Tabela $tabela)
     {
         $this->tabela = $tabela;

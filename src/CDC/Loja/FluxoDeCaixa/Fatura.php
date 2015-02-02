@@ -13,6 +13,11 @@ class Fatura
     private $pagamentos;
     private $pago = false;
 
+    /**
+     * @codeCoverageIgnore
+     * @param type $cliente
+     * @param type $valor
+     */
     public function __construct($cliente, $valor)
     {
         $this->cliente = $cliente;

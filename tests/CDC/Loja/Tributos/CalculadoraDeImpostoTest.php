@@ -1,15 +1,21 @@
 <?php
 
-namespace Loja\Tributos;
+namespace CDC\Loja\Tributos;
 
 use CDC\Loja\Test\TestCase,
     CDC\Loja\FluxoDeCaixa\Pedido,
     CDC\Loja\Tributos\CalculadoraDeImposto;
 use Mockery;
 
+/**
+ * @group Loja
+ */
 class CalculadoraDeImpostoTest extends TestCase
 {
 
+    /**
+     * @covers CDC\Loja\Tributos\CalculadoraDeImposto::calculaImposto()
+     */
     public function testCalculoImpostoParaPedidosSuperiorA2000Reais()
     {
         $tabela = Mockery::mock("CDC\Loja\Tributos\Tabela");

@@ -12,6 +12,11 @@ class Cargo
     );
     private $regra;
 
+    /**
+     * @codeCoverageIgnore
+     * @param string $regra
+     * @throws \Exception
+     */
     public function __construct($regra)
     {
 

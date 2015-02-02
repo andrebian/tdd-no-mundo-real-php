@@ -9,6 +9,12 @@ class Pedido
     private $valorTotal;
     private $quantidadeItens;
 
+    /**
+     * @codeCoverageIgnore
+     * @param type $cliente
+     * @param type $valorTotal
+     * @param type $quantidadeItens
+     */
     public function __construct($cliente, $valorTotal, $quantidadeItens)
     {
         $this->cliente = $cliente;

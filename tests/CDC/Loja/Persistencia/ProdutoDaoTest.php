@@ -5,8 +5,12 @@ namespace CDC\Loja\Persistencia;
 use CDC\Loja\Test\TestCase,
     CDC\Loja\Persistencia\ProdutoDao,
     CDC\Loja\Produto\Produto;
+use Mockery;
 use PDO;
 
+/**
+ * @group Loja
+ */
 class ProdutoDaoTest extends TestCase
 {
 
@@ -34,6 +38,9 @@ class ProdutoDaoTest extends TestCase
         $this->conexao->query($sqlString);
     }
 
+    /**
+     * @covers CDC\Loja\Persistencia\ProdutoDao::adiciona()
+     */
     public function testDeveAdicionarUmProduto()
     {
         $produtoDao = new ProdutoDao($this->conexao);
@@ -52,6 +59,9 @@ class ProdutoDaoTest extends TestCase
         $this->assertEquals($salvo["status"], $produto->getStatus());
     }
 
+    /**
+     * @covers CDC\Loja\Persistencia\ProdutoDao::ativos()
+     */
     public function testDeveFiltrarAtivos()
     {
         $produtoDao = new ProdutoDao($this->conexao);
@@ -64,6 +74,20 @@ class ProdutoDaoTest extends TestCase
 
         $this->assertEquals(1, count($produtosAtivos));
         $this->assertEquals(150.0, $produtosAtivos[0]["valor_unitario"]);
+    }
+    
+    /**
+     * @covers CDC\Loja\Persistencia\ProdutoDao::porId()
+     */
+    public function testPorId()
+    {
+        $conexao = Mockery::mock('PDO');
+        $conexao->shouldReceive('query')->andReturn($conexao);
+        $conexao->shouldReceive('fetch')->andReturn(array('id' => 1));
+       
+        $produtoDao = new ProdutoDao($conexao);
+        $this->assertNotNull($produtoDao->porId(1));
+        
     }
 
 }

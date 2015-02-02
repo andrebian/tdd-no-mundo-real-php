@@ -7,9 +7,15 @@ use CDC\Loja\Test\TestCase,
     CDC\Exemplos\RelogioDoSistema;
 use Mockery;
 
+/**
+ * @group Loja
+ */
 class GeradorDeNotaFiscalTest extends TestCase
 {
 
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\GeradorDeNotaFiscal::gera()
+     */
     public function testDeveGerarNFComValorDeImpostoDescontado()
     {
         $dao = Mockery::mock("CDC\Loja\FluxoDeCaixa\NFDao");
@@ -35,6 +41,9 @@ class GeradorDeNotaFiscalTest extends TestCase
         $this->assertEquals(1000 * 0.94, $nf->getValor(), null, 0.00001);
     }
 
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\GeradorDeNotaFiscal::gera()
+     */
     public function testDevePersistirNFGerada()
     {
         $dao = Mockery::mock("CDC\Loja\FluxoDeCaixa\NFDao");
@@ -60,6 +69,9 @@ class GeradorDeNotaFiscalTest extends TestCase
         $this->assertNotNull($nf);
     }
 
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\GeradorDeNotaFiscal::gera()
+     */
     public function testDeveEnviarNFGeradaParaSAP()
     {
         $dao = Mockery::mock("CDC\Loja\FluxoDeCaixa\NFDao");
@@ -85,6 +97,9 @@ class GeradorDeNotaFiscalTest extends TestCase
         $this->assertEquals(1000 * 0.94, $nf->getValor(), null, 0.00001);
     }
 
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\GeradorDeNotaFiscal::gera()
+     */
     public function testDeveInvocarAcoesPosteriores()
     {
         $dao = Mockery::mock("CDC\Loja\FluxoDeCaixa\NFDao");
@@ -113,6 +128,9 @@ class GeradorDeNotaFiscalTest extends TestCase
                 "CDC\Loja\FluxoDeCaixa\NotaFiscal", $nf);
     }
 
+    /**
+     * @covers CDC\Loja\FluxoDeCaixa\GeradorDeNotaFiscal::gera()
+     */
     public function testDeveConsultarATabelaParaCalcularValor()
     {
         // mockando uma tabela, que ainda nem existe

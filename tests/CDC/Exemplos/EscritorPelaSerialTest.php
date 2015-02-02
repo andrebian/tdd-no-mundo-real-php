@@ -4,7 +4,10 @@ namespace CDC\Exemplos;
 
 use CDC\Loja\Test\TestCase;
 
-class EscritorPelaPortaSerial extends TestCase
+/**
+ * @group Exemplos
+ */
+class EscritorPelaSerialTest extends TestCase
 {
 
     private $className = 'CDC\Exemplos\EscritorPelaSerial';
@@ -22,6 +25,9 @@ class EscritorPelaPortaSerial extends TestCase
         unset($this->class);
     }
     
+    /**
+     * @covers CDC\Exemplos\EscritorPelaSerial::escreve()
+     */
     public function testEscreve()
     {
         $caracteres = array('a', 'n', 'd', 'r', 'e');

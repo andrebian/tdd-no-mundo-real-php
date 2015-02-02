@@ -7,9 +7,16 @@ require "./vendor/autoload.php";
 use CDC\Exemplos\ConversorDeNumeroRomano;
 use PHPUnit_Framework_TestCase as PHPUnit;
 
+/**
+ * @group Exemplos
+ * @group Romanos
+ */
 class ConversorDeNumeroRomanoTest extends PHPUnit
 {
 
+    /**
+     * @covers CDC\Exemplos\ConversorDeNumeroRomano::converte()
+     */
     public function testDeveEntenderOSimboloI()
     {
         $romano = new ConversorDeNumeroRomano();
@@ -17,6 +24,9 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(1, $numero);
     }
 
+    /**
+     * @covers CDC\Exemplos\ConversorDeNumeroRomano::converte()
+     */
     public function testeDeveEntenderOSimboloV()
     {
         $romano = new ConversorDeNumeroRomano();
@@ -24,6 +34,9 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(5, $numero);
     }
 
+    /**
+     * @covers CDC\Exemplos\ConversorDeNumeroRomano::converte()
+     */
     public function testDeveEntenderOSimboloII()
     {
         $romano = new ConversorDeNumeroRomano();
@@ -31,6 +44,9 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(2, $numero);
     }
 
+    /**
+     * @covers CDC\Exemplos\ConversorDeNumeroRomano::converte()
+     */
     public function testeDeveEntenderOSimboloXXII()
     {
         $romano = new ConversorDeNumeroRomano();
@@ -38,6 +54,9 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(22, $numero);
     }
 
+    /**
+     * @covers CDC\Exemplos\ConversorDeNumeroRomano::converte()
+     */
     public function testDeveEntenderOSimboloIX()
     {
         $romano = new ConversorDeNumeroRomano();
@@ -45,6 +64,9 @@ class ConversorDeNumeroRomanoTest extends PHPUnit
         $this->assertEquals(9, $numero);
     }
 
+    /**
+     * @covers CDC\Exemplos\ConversorDeNumeroRomano::converte()
+     */
     public function testDeveEntenderOSimboloXXIV()
     {
         $romano = new ConversorDeNumeroRomano();

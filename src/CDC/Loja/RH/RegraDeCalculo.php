@@ -4,6 +4,9 @@ namespace CDC\Loja\RH;
 
 use CDC\Loja\RH\Funcionario;
 
+/**
+ * @codeCoverageIgnore
+ */
 abstract class RegraDeCalculo
 {
 

@@ -12,6 +12,12 @@ class Copiadora
     private $escritor;
     
     
+    /**
+     * @codeCoverageIgnore
+     * 
+     * @param LeitorDeXML $leitor
+     * @param EscritorPelaSerial $escritor
+     */
     public function __construct(LeitorDeXML $leitor,  EscritorPelaSerial $escritor)
     {
         $this->leitor = $leitor;

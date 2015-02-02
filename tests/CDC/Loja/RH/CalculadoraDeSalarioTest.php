@@ -2,16 +2,19 @@
 
 namespace CDC\Loja\RH;
 
-require "./vendor/autoload.php";
-
-use PHPUnit_Framework_TestCase as PHPUnit;
 use CDC\Loja\RH\CalculadoraDeSalario,
     CDC\Loja\RH\Funcionario,
-    CDC\Loja\RH\TabelaCargos;
+    CDC\Loja\Test\TestCase;
 
-class CalculadoraDeSalarioTest extends PHPUnit
+/**
+ * @group Loja
+ */
+class CalculadoraDeSalarioTest extends TestCase
 {
 
+    /**
+     * @covers CDC\Loja\RH\CalculadoraDeSalario::calculaSalario()
+     */
     public function testCalculoSalarioDesenvolvedoresComSalarioAbaixoDoLimite()
     {
         $calculadora = new CalculadoraDeSalario();
@@ -22,6 +25,9 @@ class CalculadoraDeSalarioTest extends PHPUnit
         $this->assertEquals(1500.0 * 0.9, $salario, null, 0.00001);
     }
 
+    /**
+     * @covers CDC\Loja\RH\CalculadoraDeSalario::calculaSalario()
+     */
     public function testCalculoSalarioDesenvolvedoresComSalarioAcimaDoLimite()
     {
         $calculadora = new CalculadoraDeSalario();
@@ -32,6 +38,9 @@ class CalculadoraDeSalarioTest extends PHPUnit
         $this->assertEquals(4000.0 * 0.8, $salario, null, 0.00001);
     }
 
+    /**
+     * @covers CDC\Loja\RH\CalculadoraDeSalario::calculaSalario()
+     */
     public function testDeveCalcularSalarioParaDBAsComSalarioAbaixoDoLimite()
     {
         $calculadora = new CalculadoraDeSalario();
@@ -41,6 +50,9 @@ class CalculadoraDeSalarioTest extends PHPUnit
         $this->assertEquals(1500.00 * 0.85, $salario, null, 0.00001);
     }
 
+    /**
+     * @covers CDC\Loja\RH\CalculadoraDeSalario::calculaSalario()
+     */
     public function testDeveCalcularSalarioParaDBAsComSalarioAcimaDoLimite()
     {
         $calculadora = new CalculadoraDeSalario();

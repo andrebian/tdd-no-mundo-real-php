@@ -13,6 +13,12 @@ class GeradorDeNotaFiscal
     private $relogio;
     private $tabela;
 
+    /**
+     * @codeCoverageIgnore
+     * @param type $acoes
+     * @param RelogioInterface $relogio
+     * @param TabelaInterface $tabela
+     */
     public function __construct($acoes, RelogioInterface $relogio, TabelaInterface $tabela)
     {
         $this->acoes = $acoes;

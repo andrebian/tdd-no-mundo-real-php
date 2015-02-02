@@ -9,6 +9,12 @@ class NotaFiscal
     private $valor;
     private $data;
 
+    /**
+     * @codeCoverageIgnore
+     * @param type $cliente
+     * @param type $valor
+     * @param type $data
+     */
     public function __construct($cliente, $valor, $data)
     {
         $this->cliente = $cliente;
