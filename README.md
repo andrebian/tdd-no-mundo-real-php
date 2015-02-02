@@ -155,7 +155,3 @@ Ao rodar todos os testes navegue até a pasta `tests/_reports/coverage` e abra o
 Para os compradores do livro em formato e-book as atualizações são constantes e, em caso de erratas vocês serão notificados para realizar um novo download. Já para os compradores do livro em formato impresso eu criei um repositório com as erratas. A estrutura do repositório segue a mesma estrutura do livro, pastas separando os capítulos e arquivos com o número da página seguido da data em que a errata foi adicionada.
 
 [Acessar Erratas](https://github.com/andrebian/erratas-livro-tdd-com-php)
-
-> As erratas atuais são da versão que ainda não foi impressa, os primeiros exemplares sairão somente no início de Fevereiro de 2015. Caso seja utilizada a versão mais atual do livro para a primeira remessa todas as erratas existentes atualmente serão removidas pois já estarão corrigidas na versão impressa.
-
-
