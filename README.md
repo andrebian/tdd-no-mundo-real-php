@@ -23,12 +23,23 @@ $ git checkout 1a503c24a97e79e6880fdb9f49f81ebad0805b46
 $ ./vendor/bin/phpunit --colors tests
 ```
 
-Antes de mais nada você deve baixar e instalar o composer, conforme apresentado no livro. Caso não lembre, segue uma cola:
+###Rodando os testes no Windows
+
+Para rodar os testes em ambiente Windows siga as instruções [deste link](https://github.com/andrebian/tdd-no-mundo-real-php/blob/master/UTILIZANDO_O_COMPOSER_NO_WINDOWS.md). Em seguida pode rodar com o seguinte comando:
 
 ```shell
-$ curl -sS https://getcomposer.org/installer | php
+vendor\bin\phpunit.bat --colors tests
+```
+
+###Mas...
+
+Antes de mais nada você deve atualizar o composer. No livro foi apresentado o download do Composer, neste caso o composer já está no repositório bastando apenas a sua atualização e instalação das dependências:
+
+```shell
+$ php composer.phar self-update
 $ php composer.phar install
 ```
+
 
 ###Checkouts para acompanhamento
 
@@ -155,3 +166,4 @@ Ao rodar todos os testes navegue até a pasta `tests/_reports/coverage` e abra o
 Para os compradores do livro em formato e-book as atualizações são constantes e, em caso de erratas vocês serão notificados para realizar um novo download. Já para os compradores do livro em formato impresso eu criei um repositório com as erratas. A estrutura do repositório segue a mesma estrutura do livro, pastas separando os capítulos e arquivos com o número da página seguido da data em que a errata foi adicionada.
 
 [Acessar Erratas](https://github.com/andrebian/erratas-livro-tdd-com-php)
+
