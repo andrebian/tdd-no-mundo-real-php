@@ -19,7 +19,7 @@ class ProdutoDaoTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->conexao = new PDO("sqlite:/tmp/test.db");
+        $this->conexao = new PDO("sqlite:test.db");
         $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->criaTabela();
     }
@@ -27,7 +27,8 @@ class ProdutoDaoTest extends TestCase
     protected function tearDown()
     {
         parent::tearDown();
-        unlink("/tmp/test.db");
+		$this->conexao = null;
+        unlink("test.db");
     }
 
     protected function criaTabela()
