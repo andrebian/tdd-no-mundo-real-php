@@ -43,7 +43,7 @@ $ php composer.phar install
 ###Configurando o ambiente para os testes
 
 ####Windows
-<iframe width="854" height="510" src="https://www.youtube.com/embed/x_F_hC6Pnes" frameborder="0" allowfullscreen></iframe>
+![ScreenShot](http://img.youtube.com/vi/x_F_hC6Pnes/0.jpg)](https://www.youtube.com/embed/x_F_hC6Pnes)
 
 ---------------
 ####MAC OS
