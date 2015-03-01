@@ -40,6 +40,19 @@ $ php composer.phar self-update
 $ php composer.phar install
 ```
 
+###Configurando o ambiente para os testes
+
+####Windows
+<iframe width="854" height="510" src="https://www.youtube.com/embed/x_F_hC6Pnes" frameborder="0" allowfullscreen></iframe>
+
+---------------
+####MAC OS
+<iframe width="854" height="510" src="https://www.youtube.com/embed/2mP37Bzyz_w" frameborder="0" allowfullscreen></iframe>
+
+---------------
+####Linux
+<iframe width="854" height="510" src="https://www.youtube.com/embed/L3YvGfu5tE8" frameborder="0" allowfullscreen></iframe>
+
 
 ###Checkouts para acompanhamento
 
@@ -166,4 +179,5 @@ Ao rodar todos os testes navegue até a pasta `tests/_reports/coverage` e abra o
 Para os compradores do livro em formato e-book as atualizações são constantes e, em caso de erratas vocês serão notificados para realizar um novo download. Já para os compradores do livro em formato impresso eu criei um repositório com as erratas. A estrutura do repositório segue a mesma estrutura do livro, pastas separando os capítulos e arquivos com o número da página seguido da data em que a errata foi adicionada.
 
 [Acessar Erratas](https://github.com/andrebian/erratas-livro-tdd-com-php)
+
 
