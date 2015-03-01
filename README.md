@@ -43,15 +43,20 @@ $ php composer.phar install
 ###Configurando o ambiente para os testes
 
 ####Windows
-![ScreenShot](http://img.youtube.com/vi/x_F_hC6Pnes/0.jpg)](https://www.youtube.com/embed/x_F_hC6Pnes)
+
+![ScreenShot](http://img.youtube.com/vi/x_F_hC6Pnes/0.jpg)](http://youtu.be/x_F_hC6Pnes)
 
 ---------------
 ####MAC OS
-<iframe width="854" height="510" src="https://www.youtube.com/embed/2mP37Bzyz_w" frameborder="0" allowfullscreen></iframe>
+
+![ScreenShot](http://img.youtube.com/vi/2mP37Bzyz_w/0.jpg)](http://youtu.be/2mP37Bzyz_w)
+
 
 ---------------
 ####Linux
-<iframe width="854" height="510" src="https://www.youtube.com/embed/L3YvGfu5tE8" frameborder="0" allowfullscreen></iframe>
+
+![ScreenShot](http://img.youtube.com/vi/L3YvGfu5tE8/0.jpg)](http://youtu.be/L3YvGfu5tE8)
+
 
 
 ###Checkouts para acompanhamento
