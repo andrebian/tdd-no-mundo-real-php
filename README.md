@@ -44,18 +44,18 @@ $ php composer.phar install
 
 ####Windows
 
-[![Alt text for your video](http://img.youtube.com/vi/x_F_hC6Pnes/0.jpg)](http://www.youtube.com/watch?v=x_F_hC6Pnes)
+[![Alt text for your video](http://www.andrebian.com/wp-content/uploads/2015/03/tdd-no-windows.jpg)](http://www.youtube.com/watch?v=x_F_hC6Pnes)
 
 ---------------
 ####MAC OS
 
-[![Alt text for your video](http://img.youtube.com/vi/2mP37Bzyz_w/0.jpg)](http://www.youtube.com/watch?v=2mP37Bzyz_w)
+[![Alt text for your video](http://www.andrebian.com/wp-content/uploads/2015/03/tdd-no-mac.jpg)](http://www.youtube.com/watch?v=2mP37Bzyz_w)
 
 
 ---------------
 ####Linux
 
-[![Alt text for your video](http://img.youtube.com/vi/L3YvGfu5tE8/0.jpg)](http://www.youtube.com/watch?v=L3YvGfu5tE8)
+[![Alt text for your video](http://www.andrebian.com/wp-content/uploads/2015/03/tdd-no-linux.jpg)](http://www.youtube.com/watch?v=L3YvGfu5tE8)
 
 
 
