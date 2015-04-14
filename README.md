@@ -61,6 +61,10 @@ $ php composer.phar install
 
 ###Checkouts para acompanhamento
 
+O video a seguir explica como seguir os checkouts corretamente.
+
+[![Alt text for your video](http://www.andrebian.com/wp-content/uploads/2015/03/tdd-no-mac.jpg)](http://www.youtube.com/watch?v=exZYaxlS3jo)
+
 ####Capítulo 2
 
  - a98fad4c041c93e2886da861c587919fefef7d89
@@ -184,5 +188,6 @@ Ao rodar todos os testes navegue até a pasta `tests/_reports/coverage` e abra o
 Para os compradores do livro em formato e-book as atualizações são constantes e, em caso de erratas vocês serão notificados para realizar um novo download. Já para os compradores do livro em formato impresso eu criei um repositório com as erratas. A estrutura do repositório segue a mesma estrutura do livro, pastas separando os capítulos e arquivos com o número da página seguido da data em que a errata foi adicionada.
 
 [Acessar Erratas](https://github.com/andrebian/erratas-livro-tdd-com-php)
+
 
 
