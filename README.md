@@ -185,9 +185,9 @@ Ao rodar todos os testes navegue até a pasta `tests/_reports/coverage` e abra o
 
 ##Erratas
 
-Para os compradores do livro em formato e-book as atualizações são constantes e, em caso de erratas vocês serão notificados para realizar um novo download. Já para os compradores do livro em formato impresso eu criei um repositório com as erratas. A estrutura do repositório segue a mesma estrutura do livro, pastas separando os capítulos e arquivos com o número da página seguido da data em que a errata foi adicionada.
+Caso localize algo que considere errado em algum exemplo do livro, você pode reportar diretamente à Casa do Código.
 
-[Acessar Erratas](https://github.com/andrebian/erratas-livro-tdd-com-php)
+[Enviar Errata](https://docs.google.com/forms/d/13Tu-1NQSvhMG8Fdtc73Vcag86MxiA0w4QWcRhAhaGnU/viewform)
 
 
 
